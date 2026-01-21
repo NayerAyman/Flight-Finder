@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import type { Flight } from "../../types/flight.types";
+import type { FlightOffer } from "../../types/flight.types";
 
 interface Props {
   maxPrice: number;
   stops: string;
-  flights: Flight[];
+  flights: FlightOffer[];
   selectedAirlines: string[];
   selectedCabins: string[];
   departureTimeRange: [number, number];

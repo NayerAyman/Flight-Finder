@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { searchFlights } from "../services/flights.service";
-import type { Flight } from "../types/flight.types";
+import type { FlightOffer } from "../types/flight.types";
 
 interface FetchFlightsParams {
   origin: string;
@@ -14,7 +14,7 @@ interface FetchFlightsParams {
 }
 
 export default function useFlights() {
-  const [flights, setFlights] = useState<Flight[]>([]);
+  const [flights, setFlights] = useState<FlightOffer[]>([]);
   const [loading, setLoading] = useState(false);
 
   const fetchFlights = async ({
@@ -29,7 +29,7 @@ export default function useFlights() {
   }: FetchFlightsParams): Promise<void> => {
     setLoading(true);
     try {
-      const data: Flight[] = await searchFlights({
+      const data: FlightOffer[] = await searchFlights({
         origin,
         destination,
         departureDate,

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { Flight } from "../types/flight.types";
+import type { FlightOffer } from "../types/flight.types";
 
 interface FilterOptions {
   maxPrice: number;
@@ -11,7 +11,7 @@ interface FilterOptions {
   directOnly: boolean;
 }
 
-export function useFilteredFlights(flights: Flight[], filters: FilterOptions) {
+export function useFilteredFlights(flights: FlightOffer[], filters: FilterOptions) {
   const { maxPrice, stops, selectedAirlines, selectedCabins, departureTimeRange, arrivalTimeRange, directOnly } = filters;
 
   return useMemo(() => {
